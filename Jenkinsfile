@@ -1,9 +1,11 @@
 pipeline {
     agent any
-  
+  	
     stages {
-        stage('Test') {
-            steps {
+        stage('Start Testing'){
+        //stage('Test') {
+            withMaven(maven: 'maventool') {
+            //steps {
 
                 // sh "mvn  clean verify -Denvironment=%navegador%,%ambiente%"
 
