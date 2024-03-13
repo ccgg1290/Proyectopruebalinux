@@ -9,7 +9,7 @@
     </appender>
 
     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
-        <file>./LogSerenity/serenity.log</file>
+        <file>./LogSerenity/serenity1.log</file>
         <append>false</append>
         <immediateFlush>true</immediateFlush>
         <encoder>
