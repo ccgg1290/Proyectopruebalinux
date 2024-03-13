@@ -1,24 +1,14 @@
-pipeline {
-    agent any
-  	
-    stages {
-        stage('Start Testing'){
-        //stage('Test') {
-            withMaven(maven: 'maventool') {
-            //steps {
-
-                // sh "mvn  clean verify -Denvironment=%navegador%,%ambiente%"
-
-                sh "mvn  clean verify"
-            }
+node() {
   
-            post {                
-                // If Maven was able to run the tests, even if some of the test
-                // failed, record the test results and archive the jar file.
-                success {
-                   publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site/serenity/', reportFiles: 'index.html', reportName: 'Serenity Report', reportTitles: '', useWrapperFileDirectly: true])     
-                }
-            }
+        
+        stage('Start Testing'){
+        	withMaven(maven: 'maventool') {
+        	    echo 'hola mundo'
+        	    sh  'mvn -version'
+        	    sh  'java -version'
+
+                sh "mvn clean verify"
+                  
+            }   
         }
-    }
 }
