@@ -7,7 +7,7 @@ pipeline {
 
                 // sh "mvn  clean verify -Denvironment=%navegador%,%ambiente%"
 
-                sh "mvn  clean verify -Denvironment=%navegador%,%ambiente%"
+                sh "mvn  clean verify"
             }
   
             post {                
